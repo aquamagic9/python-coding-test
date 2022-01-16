@@ -66,8 +66,8 @@ def find():
     for k in range(4):
         lock = turnUpsideDown(lock)
         lock = flipLeftDiagonally(lock)
-        for i in range(-len(key),len(key),1):
-            for j in range(-len(key),len(key[0]),1):
+        for i in range(-len(key), len(key), 1):
+            for j in range(-len(key), len(key[0]), 1):
                 array = makeCompareArray(key, i, j)
                 print(array)
                 if isCorrectKey(array, lock):
