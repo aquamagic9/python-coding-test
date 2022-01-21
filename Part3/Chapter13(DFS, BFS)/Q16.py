@@ -7,6 +7,7 @@ wall = []
 blank = []
 array = [M * [0] for _ in range(N)]
 cnt = 0
+# 배열 입력받기
 for y in range(N):
     row = list(map(int, input().split()))
     for x in range(M):
@@ -24,6 +25,7 @@ def flood(y, x, cnt, array):
     array[y][x] = 2
     global N
     global M
+    # 배열 안 범위이면서 blank(0)이면 cnt 1감소
     if y - 1 >= 0 and array[y - 1][x] == 0:
         cnt -= 1
         cnt = flood(y - 1, x, cnt, array)
@@ -38,6 +40,7 @@ def flood(y, x, cnt, array):
         cnt = flood(y, x + 1, cnt, array)
     return cnt
 
+# 조합을 이용해 blank에서 벽의 좌표 3개를 뽑는다
 picks = combinations(blank, 3)
 result = []
 for pick in picks:
